@@ -1,5 +1,4 @@
 import json
-
 import requests
 
 json_data = open("data.json", "r").read()
