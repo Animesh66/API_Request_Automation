@@ -1,0 +1,5 @@
+import requests
+
+resp = requests.get("https://the-internet.herokuapp.com/basic_auth", auth=('asdf', 'asdf'))
+print(resp.status_code)
+assert resp.status_code == 401, "Authorization failed"
