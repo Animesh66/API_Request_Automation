@@ -1,11 +1,9 @@
+import json
+
 import requests
 
-payload = {
-    "name": "Animesh",
-    "job": "QA Engineer"
-}
-
-resp = requests.post("https://reqres.in/api/users", data=payload)
+json_data = open("data.json", "r").read()
+resp = requests.post("https://reqres.in/api/users", data=json.loads(json_data))
 status_code = resp.status_code
 resp_json = resp.json()
 print(status_code)
