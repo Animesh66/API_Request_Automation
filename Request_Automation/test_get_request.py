@@ -20,7 +20,7 @@ print(resp_json)  # Returns the json-encoded content of a response, if any
 # Navigate to http://jsonviewer.stack.hu/ to view the json format data
 print(resp_cookies)
 
-#   *** Verify response ***
+#   *** Verify responses ***
 
 print(resp_json['total_pages'])
 assert resp_json['total_pages'] == 2, "Total pages count does not match"
