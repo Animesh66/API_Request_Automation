@@ -1,6 +1,8 @@
 import requests
 
-resp = requests.get("https://reqres.in/api/users?page=2")
+parameters = {'page': 2}
+resp = requests.get("https://reqres.in/api/users", params=parameters)
+print(resp.url)
 print(resp)
 print(type(resp))
 print(dir(resp))
@@ -24,3 +26,4 @@ print(resp_json['total_pages'])
 assert resp_json['total_pages'] == 2, "Total pages count does not match"
 print(resp_json['data'][0]['email'])
 assert resp_json['data'][0]['email'] == 'michael.lawson@reqres.in', "Email id is not matching"
+assert (resp_json['data'][0]['email']).endswith('@reqres.in'), "Email format not matching"
