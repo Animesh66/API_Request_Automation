@@ -21,3 +21,6 @@ print(resp_cookies)
 #   *** Verify response ***
 
 print(resp_json['total_pages'])
+assert resp_json['total_pages'] == 2, "Total pages count does not match"
+print(resp_json['data'][0]['email'])
+assert resp_json['data'][0]['email'] == 'michael.lawson@reqres.in', "Email id is not matching"
